@@ -21,12 +21,17 @@ const Login = () => {
   const {
     control,
     formState: { errors, isValid },
+    handleSubmit
   } = useForm<IFormLogin>({
     resolver: yupResolver(schema),
     mode: "onBlur",
     defaultValues,
     reValidateMode: "onChange",
   });
+
+  const handleLogin = (data: IFormLogin) => {
+    console.log(data);
+  };
 
   return (
     <Container>
@@ -49,7 +54,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" onClick={handleSubmit(handleLogin)} disabled={!isValid} />
         </Column>
       </LoginContainer>
     </Container>
@@ -57,3 +62,4 @@ const Login = () => {
 };
 
 export default Login;
+

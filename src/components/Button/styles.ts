@@ -1,17 +1,24 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 export const ButtonContainer = styled.button`
-    width: 100%;
-    height: 42px;
-    background-color: #81259D;
-    color: #FFF;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 
-    border: 1px solid #81259D;
-    border-radius: 21px;
+  &:hover {
+    background-color: #0056b3;
+  }
 
-    &:hover {
-        opacity: 0.6;
-        cursor:pointer;
-    }
-`
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+`;
